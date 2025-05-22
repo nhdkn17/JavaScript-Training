@@ -25,3 +25,14 @@ console.log(arr); // [1, 9, 9, 9, 5]
 let names = ["An", "Lan", "Ngọc", "Minh"];
 let ketQua = names.filter(name => name.length > 3);
 console.log(ketQua);
+
+// array.slice(start, end);
+
+let colors = ["Đỏ", "Cam", "Vàng", "Xanh", "Tím"];
+let warmColors = colors.slice(0, 3);
+
+// let copy = originalArray.slice();
+
+let myNumbers = [3, 34, 28, 43, 74, 52, 59, 21, 49, 53];
+myNumbers.splice(2, 4, "Hello", "World");
+console.log(myNumbers); // [ 3, 34, 'Hello', 'World', 59, 21, 49, 53 ]
