@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            color: blue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Xin chào!</div>
+
+    <script>
+        let box = document.getElementById("box");
+        let style = getComputedStyle(box);
+
+        console.log(style.color);
+        console.log(style.fontSize);
+
+        let fontSize = parseFloat(getComputedStyle(box).fontSize);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <h2>Tiêu đề 1</h2>
+        <p id="greeting">Xin chào!</p>
+    </div>
+    <div class="box">
+        <h2>Tiêu đề 2</h2>
+        <p class="intro">Xin chào!</p>
+        <ul>
+            <li>JS</li>
+            <li>HTML</li>
+        </ul>
+    </div>
+
+    <script>
+        let p = document.getElementById("greeting");
+        p.innerText = "Hello!";
+
+        let boxes = document.getElementsByClassName("box");
+
+        let headers = document.getElementsByTagName("h2");
+
+        let p2 = document.querySelector(".intro");
+
+        let items = document.querySelectorAll("li");
+
+        document.getElementById("content").innerHTML = "<strong>Nội dung in đậm</strong>";
+
+        document.getElementById("photo").setAttribute("src", "new.jpg");
+
+        let link = document.getElementById("mylink");
+        link.href = "https://facebook.com";
+
+        document.getElementById("box").className = "highlight";
+
+        let box = document.getElementById("box");
+        box.classList.add("active");
+        box.classList.remove("hidden");
+        box.classList.toggle("visible");
+
+        let p = document.getElementById("demo");
+        p.style.color = "red";
+        p.style.backgroundColor = "yellow";
+        p.style.fontSize = "20px";
+
+        let newItem = document.createElement("li");
+        newItem.innerText = "Mục mới";
+        document.querySelector("ul").appendChild(newItem);
+
+        let element = document.getElementById("removeMe");
+        element.remove();
+    </script>
+</body>
+</html>

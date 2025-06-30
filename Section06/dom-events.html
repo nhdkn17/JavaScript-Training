@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sayHello()">Click</button>
+
+    <button id="btn">Click me</button>
+
+    <input type="text" id="name" placeholder="Nhập tên">
+
+    <script>
+        function sayHello() {
+            console.log('Xin chào!');
+        }
+
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function() {
+            alert("Bạn vừa click!");
+        });
+        
+        btn.removeEventListener("click", handleClick);
+
+        btn.addEventListener("mouseover", () => {
+            console.log("Rê chuột lên nút");
+        });
+
+        btn.addEventListener("dblclick", () => {
+            alert("Bạn double click!");
+        });
+
+        document.getElementById("name").addEventListener("input", function() {
+            console.log("Giá trị hiện tại:", this.value);
+        });
+
+        document.getElementById("link").addEventListener("click", function(e) {
+            e.preventDefault();
+            alert("Đã chặn chuyển hướng!");
+        });
+    </script>
+</body>
+</html>
