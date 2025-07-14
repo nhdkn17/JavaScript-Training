@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Load Phase: chạy ngay khi trình duyệt tới đây
+        console.log("Script loaded");
+      
+        window.onload = function() {
+            // Event-Driven Phase: chạy khi tài liệu đã tải xong
+            console.log("Document fully loaded");
+        };
+      
+        document.onclick = function() {
+            // Event-Driven Phase: chạy khi người dùng click
+            console.log("User clicked");
+        };
+
+        // Dangerous XSS example
+        // greet.html
+        var name = decodeURIComponent(window.location.search.substring(1));
+        document.write("Hello " + name);
+
+        name = name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+    </script>
+</body>
+</html>
