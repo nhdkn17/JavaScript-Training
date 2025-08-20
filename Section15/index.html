@@ -1,0 +1,20 @@
+<button id="mybutton">Click me</button>
+<button onclick="alert(tagName);">Click</button>
+<script>
+    var b = document.getElementById("mybutton");
+    b.onclick = function() { alert("Thanks for clicking me!"); };
+    b.addEventListener("click", function() { alert("Thanks again!"); }, false);
+
+    button.onclick = function() {
+        console.log(this === button);
+    };
+</script>
+
+<script>
+    function setup() {
+        let msg = "Hello";
+        button.onclick = function() {
+            alert(msg);
+        };
+    }
+</script>
