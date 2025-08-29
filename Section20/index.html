@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div onload="getMap()"></div>
+
+    <script src="geolocation.js"></script>
+
+    <h3>IndexedDB Contacts Example</h3>
+    <button onclick="addContact()">Add Contact</button>
+    <button onclick="showContacts()">Show All</button>
+    <div id="output"></div>
+
+    <script src="databases.js"></script>
+
+    <input id="input" style="width:100%" />
+
+    <script>
+        window.onload = function() {
+            let nick = prompt("Enter your nickname");
+            let input = document.getElementById("input");
+
+            // Tạo WebSocket kết nối tới cùng host
+            let socket = new WebSocket("ws://" + location.host + "/");
+
+            // Nhận tin nhắn
+            socket.onmessage = function(event) {
+                let div = document.createElement("div");
+                div.textContent = event.data;
+                document.body.insertBefore(div, input);
+            };
+
+            // Gửi tin nhắn khi nhấn Enter
+            input.onchange = function() {
+                let msg = nick + ": " + input.value;
+                socket.send(msg);
+                input.value = "";
+            };
+        };
+    </script>
+    <script src="webSockets.js"></script>
+</body>
+</html>
